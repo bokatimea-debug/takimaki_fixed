@@ -1,11 +1,4 @@
-﻿import 'screens/requests/request_details_screen.dart';
-import 'screens/orders/order_details_screen.dart';
-import 'screens/onboarding.dart';
-import 'screens/settings_notifications_screen.dart';
-import 'screens/moderation_demo_screen.dart';
-import 'screens/offers_demo_screen.dart';
-import 'screens/chat_demo_screen.dart';
-import 'screens/provider_offer_reply_screen.dart';
+﻿import 'screens/provider_offer_reply_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -58,15 +51,6 @@ class TakimakiApp extends StatelessWidget {
       locale: const Locale('hu'),
       home: const SplashLoginScreen(),
       routes: <String, WidgetBuilder>{
-        '/order/details': (ctx) => OrderDetailsScreen(order: ModalRoute.of(ctx)!.settings.arguments),
-        '/request/details': (ctx) => RequestDetailsScreen(request: ModalRoute.of(ctx)!.settings.arguments),
-        '/provider/edit': (_) => const ProviderEditProfileScreen(),
-        '/role': (_) => const RoleSelectScreen(),
-        '/settings/notifications': (_) => const SettingsNotificationsScreen(),
-        '/moderation/demo': (_) => const ModerationDemoScreen(),
-        '/offers/demo': (_) => const OffersDemoScreen(),
-        '/chat/demo': (_) => const ChatDemoScreen(),
-        '/provider/offer_reply': (_) => const ProviderOfferReplyScreen(),
         '/role_select': (_) => const RoleSelectScreen(),
 
         '/customer/profile':      (_) => const CustomerProfileScreen(),
@@ -91,6 +75,5 @@ class TakimakiApp extends StatelessWidget {
     );
   }
 }
-
 
 

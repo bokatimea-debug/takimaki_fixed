@@ -1,4 +1,4 @@
-workflows:
+﻿workflows:
   android-debug:
     name: Android Debug Build
     max_build_duration: 60
