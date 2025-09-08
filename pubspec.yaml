@@ -40,3 +40,6 @@ flutter_icons:
   image_path: assets/icons/takimaki_icon.png
   remove_alpha_ios: true
 
+
+  assets:
+    - assets/services.json
