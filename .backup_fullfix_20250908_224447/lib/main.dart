@@ -1,11 +1,4 @@
-﻿import 'widgets/district_picker.dart';
-import 'screens_fixed/orders_list_fixed.dart';
-import 'screens_fixed/incoming_requests_fixed.dart';
-import 'screens_fixed/my_services_fixed.dart';
-import 'screens_fixed/service_form_fixed.dart';
-import 'screens_fixed/profile_edit_fixed.dart';
-import 'screens_fixed/basic_info_fixed.dart';
-import 'screens/requests/request_details_screen.dart';
+﻿import 'screens/requests/request_details_screen.dart';
 import 'screens/orders/order_details_screen.dart';
 import 'screens/onboarding.dart';
 import 'screens/settings_notifications_screen.dart';
@@ -64,15 +57,7 @@ class TakimakiApp extends StatelessWidget {
       ],
       locale: const Locale('hu'),
       home: const SplashLoginScreen(),
-      routes: <String, WidgetBuilder>{        '/onboarding/basic_fixed': (_) => const BasicInfoScreenFixed(),
-        '/profile/edit_fixed':     (_) => const ProfileEditScreenFixed(),
-        '/services_fixed':         (_) => const MyServicesScreenFixed(),
-        '/service/new_fixed':      (_) => const ServiceFormScreenFixed(),
-        '/service/edit_fixed':     (ctx) => ServiceFormScreenFixed(existing: ModalRoute.of(ctx)!.settings.arguments as Map<String,dynamic>?),
-        '/requests/incoming_fixed':(_) => const IncomingRequestsScreenFixed(),
-        '/orders_fixed':           (_) => const OrdersListScreenFixed(),
-        '/request/details':        (ctx) => RequestDetailsScreen(request: ModalRoute.of(ctx)!.settings.arguments),
-        '/order/details':          (ctx) => OrderDetailsScreen(order:   ModalRoute.of(ctx)!.settings.arguments),
+      routes: <String, WidgetBuilder>{
         '/order/details': (ctx) => OrderDetailsScreen(order: ModalRoute.of(ctx)!.settings.arguments),
         '/request/details': (ctx) => RequestDetailsScreen(request: ModalRoute.of(ctx)!.settings.arguments),
         '/provider/edit': (_) => const ProviderEditProfileScreen(),
@@ -106,7 +91,6 @@ class TakimakiApp extends StatelessWidget {
     );
   }
 }
-
 
 
 

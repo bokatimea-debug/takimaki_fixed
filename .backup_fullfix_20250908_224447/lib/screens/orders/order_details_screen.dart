@@ -6,7 +6,7 @@ class OrderDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final o = order ?? ModalRoute.of(context)!.settings.arguments as Map?;
+    final o = order ?? ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       appBar: AppBar(title: const Text('Rendelés részletek')),
       body: Padding(
@@ -20,10 +20,10 @@ class OrderDetailsScreen extends StatelessWidget {
             Text('Időpont: \'),
             Text('Ár: \'),
             const Divider(height: 24),
-            if (o?['rating'] != null) ...[
+            if ((o?.rating) != null) ...[
               const Text('Értékelés', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
               Text('Csillag: \'),
-              Text(o?['rating']['comment'] ?? ""),
+              Text(o?.rating?.comment ?? ""),
             ] else
               const Text('Még nincs értékelés.'),
           ],
