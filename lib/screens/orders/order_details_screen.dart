@@ -23,7 +23,6 @@ class OrderDetailsScreen extends StatelessWidget {
           const SizedBox(height: 8),
           _row('Helyszín:', o?['location']?.toString() ?? '-'),
 
-          // Értékelés (ha van)
           if (o?['rating'] != null) ...[
             const SizedBox(height: 16),
             const Divider(),
