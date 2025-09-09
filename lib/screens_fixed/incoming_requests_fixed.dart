@@ -19,7 +19,7 @@ class _IncomingRequestsScreenFixedState extends State<IncomingRequestsScreenFixe
         itemBuilder: (_, i) {
           final r = _reqs[i];
           return ListTile(
-            title: Text(r['serviceName']),
+            title: Text((r['serviceName'] ?? '-').toString()),
             subtitle: Text(" •  • "),
             onTap: ()=>Navigator.pushNamed(context, '/request/details', arguments: r),
             trailing: IconButton(
@@ -37,3 +37,4 @@ class _IncomingRequestsScreenFixedState extends State<IncomingRequestsScreenFixe
     );
   }
 }
+

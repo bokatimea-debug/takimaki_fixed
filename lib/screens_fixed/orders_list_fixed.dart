@@ -16,10 +16,10 @@ class OrdersListScreenFixed extends StatelessWidget {
         itemBuilder: (_, i) {
           final o = orders[i];
           return ListTile(
-            title: Text(o['serviceName']),
+            title: Text((o['serviceName'] ?? '-').toString()),
             subtitle: Text(" •  • "),
             trailing: const Icon(Icons.chevron_right),
-            onTap: ()=>Navigator.pushNamed(_, '/order/details', arguments: o),
+            onTap: ()=>Navigator.pushNamed(context, '/order/details', arguments: o),
           );
         },
         separatorBuilder: (_, __)=>const Divider(height:1),
@@ -28,3 +28,4 @@ class OrdersListScreenFixed extends StatelessWidget {
     );
   }
 }
+

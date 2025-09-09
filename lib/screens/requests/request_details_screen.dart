@@ -13,13 +13,13 @@ class RequestDetailsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _row('Szolgáltatás:', r?['serviceName']?.toString() ?? '-'),
+          _row('Szolgáltatás:', (r?['serviceName'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Ügyfél:', r?['customer']?.toString() ?? '-'),
+          _row('Ügyfél:', (r?['customer'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Helyszín:', r?['cityDist']?.toString() ?? '-'),
+          _row('Helyszín:', (r?['cityDist'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Időpont:', r?['when']?.toString() ?? '-'),
+          _row('Időpont:', (r?['when'] ?? '-').toString()),
           const SizedBox(height: 16),
           Row(
             children: [
@@ -27,9 +27,7 @@ class RequestDetailsScreen extends StatelessWidget {
                 child: FilledButton.icon(
                   icon: const Icon(Icons.check),
                   label: const Text('Gyors elfogadás'),
-                  onPressed: () {
-                    Navigator.pop(context, {'action': 'accept', 'id': r?['id']});
-                  },
+                  onPressed: () => Navigator.pop(context, {'action':'accept','id': r?['id']}),
                 ),
               ),
               const SizedBox(width: 12),
@@ -37,9 +35,7 @@ class RequestDetailsScreen extends StatelessWidget {
                 child: OutlinedButton.icon(
                   icon: const Icon(Icons.close),
                   label: const Text('Elutasítás'),
-                  onPressed: () {
-                    Navigator.pop(context, {'action': 'reject', 'id': r?['id']});
-                  },
+                  onPressed: () => Navigator.pop(context, {'action':'reject','id': r?['id']}),
                 ),
               ),
             ],

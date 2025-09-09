@@ -13,18 +13,17 @@ class OrderDetailsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _row('Azonosító:', o?['id']?.toString() ?? '-'),
+          _row('Azonosító:', (o?['id'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Szolgáltatás:', o?['service']?.toString() ?? '-'),
+          _row('Szolgáltatás:', (o?['service'] ?? o?['serviceName'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Szolgáltató:', o?['providerName']?.toString() ?? '-'),
+          _row('Szolgáltató:', (o?['providerName'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Időpont:', o?['time']?.toString() ?? '-'),
+          _row('Időpont:', (o?['time'] ?? o?['when'] ?? '-').toString()),
           const SizedBox(height: 8),
-          _row('Helyszín:', o?['location']?.toString() ?? '-'),
-
+          _row('Helyszín:', (o?['location'] ?? o?['cityDist'] ?? '-').toString()),
+          const SizedBox(height: 16),
           if (o?['rating'] != null) ...[
-            const SizedBox(height: 16),
             const Divider(),
             const SizedBox(height: 8),
             Text('Értékelés', style: Theme.of(context).textTheme.titleMedium),
@@ -33,13 +32,11 @@ class OrderDetailsScreen extends StatelessWidget {
               children: [
                 const Icon(Icons.star, color: Colors.amber),
                 const SizedBox(width: 6),
-                Text(
-                  (o?['rating']['stars'] ?? o?['rating']).toString(),
-                  style: const TextStyle(fontWeight: FontWeight.w600),
-                ),
+                Text(((o?['rating']['stars'] ?? o?['rating']) ?? '').toString(),
+                    style: const TextStyle(fontWeight: FontWeight.w600)),
               ],
             ),
-            if ((o?['rating']['comment'] ?? '').toString().isNotEmpty) ...[
+            if (((o?['rating']['comment'] ?? '') as String).isNotEmpty) ...[
               const SizedBox(height: 8),
               Text(o?['rating']['comment'] ?? ''),
             ],

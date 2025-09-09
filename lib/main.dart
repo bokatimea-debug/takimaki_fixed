@@ -71,10 +71,10 @@ class TakimakiApp extends StatelessWidget {
         '/service/edit_fixed':     (ctx) => ServiceFormScreenFixed(existing: ModalRoute.of(ctx)!.settings.arguments as Map<String,dynamic>?),
         '/requests/incoming_fixed':(_) => const IncomingRequestsScreenFixed(),
         '/orders_fixed':           (_) => const OrdersListScreenFixed(),
-        '/request/details':        (ctx) => RequestDetailsScreen(request: ModalRoute.of(ctx)!.settings.arguments),
-        '/order/details':          (ctx) => OrderDetailsScreen(order:   ModalRoute.of(ctx)!.settings.arguments),
-        '/order/details': (ctx) => OrderDetailsScreen(order: ModalRoute.of(ctx)!.settings.arguments),
-        '/request/details': (ctx) => RequestDetailsScreen(request: ModalRoute.of(ctx)!.settings.arguments),
+        '/request/details':        (ctx) => RequestDetailsScreen(),
+        '/order/details':          (ctx) => OrderDetailsScreen(),
+        '/order/details': (ctx) => OrderDetailsScreen(),
+        '/request/details': (ctx) => RequestDetailsScreen(),
         '/provider/edit': (_) => const ProviderEditProfileScreen(),
         '/role': (_) => const RoleSelectScreen(),
         '/settings/notifications': (_) => const SettingsNotificationsScreen(),
@@ -106,6 +106,7 @@ class TakimakiApp extends StatelessWidget {
     );
   }
 }
+
 
 
 
